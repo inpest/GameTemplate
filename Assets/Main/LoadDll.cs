@@ -1,34 +1,25 @@
 using HybridCLR;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Networking;
+using YooAsset;
 
 public class LoadDll : MonoBehaviour
 {
-
-
-    void Start()
+    public IEnumerator StartGame(ResourcePackage package)
     {
-        // 使用BetterStreamingAssets插件，即使在Android平台也可以直接读取StreamingAssets下内容，简化演示。
-        BetterStreamingAssets.Initialize();
-        StartGame();
-    }
-
-
-    void StartGame()
-    {
+        Debug.Log("[StartGame]");
         LoadMetadataForAOTAssemblies();
 
 #if !UNITY_EDITOR
-        System.Reflection.Assembly.Load(BetterStreamingAssets.ReadAllBytes("Assembly-CSharp.dll.bytes"));
+        var handle1 = package.LoadRawFileAsync("Assembly-CSharp.dll");
+        yield return handle1;
+        byte[] fileData = handle1.GetRawFileData();
+        System.Reflection.Assembly.Load(fileData);
 #endif
-
-        AssetBundle prefabAb = AssetBundle.LoadFromMemory(BetterStreamingAssets.ReadAllBytes("prefabs"));
-        GameObject testPrefab = Instantiate(prefabAb.LoadAsset<GameObject>("HotUpdatePrefab.prefab"));
+        AssetOperationHandle handle = package.LoadAssetAsync<GameObject>("HotUpdatePrefab");
+        yield return handle;
+        GameObject go = handle.InstantiateSync();
     }
 
 
@@ -51,7 +42,7 @@ public class LoadDll : MonoBehaviour
         HomologousImageMode mode = HomologousImageMode.SuperSet;
         foreach (var aotDllName in aotMetaAssemblyFiles)
         {
-            byte[] dllBytes = BetterStreamingAssets.ReadAllBytes(aotDllName + ".bytes");
+            byte[] dllBytes = Resources.Load<TextAsset>("AOTDLLs/" + aotDllName).bytes;
             // 加载assembly对应的dll，会自动为它hook。一旦aot泛型函数的native函数不存在，用解释器版本代码
             LoadImageErrorCode err = RuntimeApi.LoadMetadataForAOTAssembly(dllBytes, mode);
             Debug.Log($"LoadMetadataForAOTAssembly:{aotDllName}. mode:{mode} ret:{err}");

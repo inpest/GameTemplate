@@ -1,10 +1,7 @@
 ﻿using HybridCLR.Editor.Commands;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,6 +15,7 @@ namespace HybridCLR.Editor
 
         public static string AssetBundleSourceDataTempDir => $"{HybridCLRBuildCacheDir}/AssetBundleSourceData";
 
+        public static string DLLRes => Application.dataPath + "/HotAssets/DLLs";
 
         public static string GetAssetBundleOutputDirByTarget(BuildTarget target)
         {
@@ -78,6 +76,15 @@ namespace HybridCLR.Editor
             CopyABAOTHotUpdateDlls(target);
         }
 
+        [MenuItem("HybridCLR/Build/BuildAssetsAndCopyToGameRes")]
+        public static void BuildHotDLLAndCopyToGameRes()
+        {
+            BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+            CompileDllCommand.CompileDll(target);
+            CopyHotUpdateAssembliesToGameRes();
+            AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
+        }
+
         public static void CopyABAOTHotUpdateDlls(BuildTarget target)
         {
             CopyAssetBundlesToStreamingAssets(target);
@@ -124,6 +131,19 @@ namespace HybridCLR.Editor
                 string dllBytesPath = $"{hotfixAssembliesDstDir}/{dll}.bytes";
                 File.Copy(dllPath, dllBytesPath, true);
                 Debug.Log($"[CopyHotUpdateAssembliesToStreamingAssets] copy hotfix dll {dllPath} -> {dllBytesPath}");
+            }
+        }
+
+        public static void CopyHotUpdateAssembliesToGameRes()
+        {
+            var target = EditorUserBuildSettings.activeBuildTarget;
+
+            string hotfixDllSrcDir = SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target);
+            foreach (var dll in SettingsUtil.HotUpdateAssemblyFilesExcludePreserved)
+            {
+                string dllPath = $"{hotfixDllSrcDir}/{dll}";
+                File.Copy(dllPath, $"{DLLRes}/{dll}.bytes", true);
+                Debug.Log($"[CopyHotUpdateAssembliesToGameRes] copy hotfix dll {dllPath} -> {$"{DLLRes}/{dll}.bytes"}");
             }
         }
 

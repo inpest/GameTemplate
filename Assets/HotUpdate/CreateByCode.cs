@@ -14,15 +14,18 @@ public class CreateByCode : MonoBehaviour
     {
 
         ao = new AndroidJavaObject("com.pocket.zxpa.ShowAds");
-
-        initBtn.onClick.AddListener(() => {
-            ao.Call("Init", "taptap", "12049"); // 平台 ， appid
-        });
-        showBtn.onClick.AddListener(() => { // 广告位id
-            ao.Call("Show", "55995");
-        });
+        ao.Call("Init", "xiaomi", "11723"); // 平台 ， appid
+        
 
         Debug.Log("游戏初始化成功");
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            ao.Call("Show", "55339");
+        }
     }
 
     public void OnReward()

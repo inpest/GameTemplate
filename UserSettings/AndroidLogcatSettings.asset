@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "127.0.0.1:7555",
     "m_SelectedPackage": {
         "deviceId": "127.0.0.1:7555",
-        "name": "zh.SG.LordRelife",
-        "processId": 2663,
+        "name": "com.pocket.topbrowser",
+        "processId": 8006,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -16,32 +16,38 @@
         },
         {
             "deviceId": "127.0.0.1:7555",
-            "name": "com.pocket.topbrowser",
-            "processId": 12366,
+            "name": "com.mumu.launcher",
+            "processId": 1522,
+            "exited": false
+        },
+        {
+            "deviceId": "127.0.0.1:7555",
+            "name": "com.tianzhiren.gametemplete",
+            "processId": 6492,
+            "exited": true
+        },
+        {
+            "deviceId": "127.0.0.1:7555",
+            "name": "com.tianzhiren.gametemplete",
+            "processId": 6635,
+            "exited": true
+        },
+        {
+            "deviceId": "127.0.0.1:7555",
+            "name": "com.tianzhiren.tanxian",
+            "processId": 7026,
+            "exited": true
+        },
+        {
+            "deviceId": "127.0.0.1:7555",
+            "name": "com.SG.ShootingGame",
+            "processId": 7393,
             "exited": true
         },
         {
             "deviceId": "127.0.0.1:7555",
             "name": "com.pocket.topbrowser",
-            "processId": 18617,
-            "exited": true
-        },
-        {
-            "deviceId": "127.0.0.1:7555",
-            "name": "com.pocket.topbrowser",
-            "processId": 24492,
-            "exited": true
-        },
-        {
-            "deviceId": "127.0.0.1:7555",
-            "name": "com.pocket.topbrowser",
-            "processId": 2999,
-            "exited": true
-        },
-        {
-            "deviceId": "127.0.0.1:7555",
-            "name": "zh.SG.LordRelife",
-            "processId": 2663,
+            "processId": 8006,
             "exited": false
         }
     ],
