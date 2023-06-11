@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "127.0.0.1:7555",
     "m_SelectedPackage": {
         "deviceId": "127.0.0.1:7555",
-        "name": "com.pocket.topbrowser",
-        "processId": 8006,
+        "name": "com.tianzhiren.tanxian",
+        "processId": 2764,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -13,18 +13,6 @@
             "name": "com.android.launcher3",
             "processId": 1170,
             "exited": false
-        },
-        {
-            "deviceId": "127.0.0.1:7555",
-            "name": "com.mumu.launcher",
-            "processId": 1522,
-            "exited": false
-        },
-        {
-            "deviceId": "127.0.0.1:7555",
-            "name": "com.tianzhiren.gametemplete",
-            "processId": 6492,
-            "exited": true
         },
         {
             "deviceId": "127.0.0.1:7555",
@@ -48,6 +36,12 @@
             "deviceId": "127.0.0.1:7555",
             "name": "com.pocket.topbrowser",
             "processId": 8006,
+            "exited": true
+        },
+        {
+            "deviceId": "127.0.0.1:7555",
+            "name": "com.tianzhiren.tanxian",
+            "processId": 2764,
             "exited": false
         }
     ],

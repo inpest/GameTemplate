@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YooAsset;
 
 public class CreateByCode : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class CreateByCode : MonoBehaviour
     {
 
         ao = new AndroidJavaObject("com.pocket.zxpa.ShowAds");
-        ao.Call("Init", "xiaomi", "11723"); // 平台 ， appid
+        ao.Call("Init", "taptap", "12489"); // 平台 ， appid
         
 
         Debug.Log("游戏初始化成功");
@@ -24,7 +23,12 @@ public class CreateByCode : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            ao.Call("Show", "55339");
+            ao.Call("Show", "57000");
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            var package = YooAssets.GetPackage("DefaultPackage");
+            package.LoadSceneAsync("HotUpdataScene");
         }
     }
 

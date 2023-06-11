@@ -4,36 +4,33 @@
     <type fullname="System.Array" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
-    <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
-    <type fullname="System.Exception" preserve="all" />
-    <type fullname="System.Func`1" preserve="all" />
     <type fullname="System.Int32" preserve="all" />
     <type fullname="System.Object" preserve="all" />
-    <type fullname="System.Runtime.CompilerServices.AsyncStateMachineAttribute" preserve="all" />
-    <type fullname="System.Runtime.CompilerServices.AsyncTaskMethodBuilder" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" preserve="all" />
-    <type fullname="System.Runtime.CompilerServices.CompilerGeneratedAttribute" preserve="all" />
-    <type fullname="System.Runtime.CompilerServices.IAsyncStateMachine" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" preserve="all" />
-    <type fullname="System.Runtime.CompilerServices.TaskAwaiter" preserve="all" />
     <type fullname="System.Security.Permissions.SecurityAction" preserve="all" />
     <type fullname="System.Security.Permissions.SecurityPermissionAttribute" preserve="all" />
     <type fullname="System.Security.UnverifiableCodeAttribute" preserve="all" />
+    <type fullname="System.Single" preserve="all" />
     <type fullname="System.String" preserve="all" />
-    <type fullname="System.Threading.Tasks.Task" preserve="all" />
     <type fullname="System.Type" preserve="all" />
-    <type fullname="System.ValueType" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.TextMeshPro">
+    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
+    <type fullname="TMPro.TMP_Text" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.AndroidJNIModule">
     <type fullname="UnityEngine.AndroidJavaObject" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.CoreModule">
-    <type fullname="UnityEngine.Application" preserve="all" />
     <type fullname="UnityEngine.Component" preserve="all" />
     <type fullname="UnityEngine.Debug" preserve="all" />
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.KeyCode" preserve="all" />
     <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
+    <type fullname="UnityEngine.Time" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.InputLegacyModule">
     <type fullname="UnityEngine.Input" preserve="all" />
@@ -41,5 +38,10 @@
   <assembly fullname="UnityEngine.UI">
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.Text" preserve="all" />
+  </assembly>
+  <assembly fullname="YooAsset">
+    <type fullname="YooAsset.ResourcePackage" preserve="all" />
+    <type fullname="YooAsset.SceneOperationHandle" preserve="all" />
+    <type fullname="YooAsset.YooAssets" preserve="all" />
   </assembly>
 </linker>

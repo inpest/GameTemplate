@@ -46,3 +46,16 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+    - GroupName: scene
+      GroupDesc: "\u573A\u666F"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Scenes/HotUpdataScene.unity
+        CollectorGUID: f11001de4937c5a49932b02eafecfc2f
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackCollector
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
